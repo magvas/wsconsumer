@@ -17,12 +17,12 @@ soap.createClient(url,function(err,client){
     });
 });
 
-function sortObject(o) {
-    var sorted = {},
+function sortObject(objectToSort) {
+    var sortedObject = {},
     key, a = [];
 
-    for (key in o) {
-        if (o.hasOwnProperty(key)) {
+    for (key in objectToSort) {
+        if (objectToSort.hasOwnProperty(key)) {
             a.push(key);
         }
     }
@@ -30,7 +30,7 @@ function sortObject(o) {
     a.sort();
 
     for (key = 0; key < a.length; key++) {
-        sorted[a[key]] = o[a[key]];
+        sortedObject[a[key]] = objectToSort[a[key]];
     }
-    return sorted;
+    return sortedObject;
 }
